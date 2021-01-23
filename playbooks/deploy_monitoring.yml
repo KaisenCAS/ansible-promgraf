@@ -1,0 +1,4 @@
+- hosts: prometheus
+  remote_user: root
+  roles:
+     - monitoring

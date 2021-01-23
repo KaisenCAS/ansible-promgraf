@@ -1,0 +1,23 @@
+server {
+	listen 80;
+	server_name prometheus.fyc.lan;
+
+	location / {
+
+	return 301 https://prometheus.fyc.lan;
+	}
+}
+
+server {
+	listen 443;
+	server_name prometheus.fyc.lan;
+	root /usr/share/prometheus;
+	ssl on;
+	ssl_certificate /etc/ssl/certs/prometheus.fyc.lan.pem;
+	ssl_certificate_key /etc/ssl/certs/prometheus.fyc.lan.pem;
+	ssl_protocols TLSv1.2 TLSv1.3;
+	
+	location / {
+	proxy_pass http://127.0.0.1:9090;
+}
+}
