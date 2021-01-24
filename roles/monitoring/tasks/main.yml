@@ -33,12 +33,6 @@
     mode: 0644
 
 - file:
-    path: /etc/nginx/sites-available/prometheus
-    owner: root
-    group: root
-    mode: 0644
-
-- file:
     src: /etc/nginx/sites-available/prometheus
     dest: /etc/nginx/sites-enabled/prometheus
     owner: root
@@ -59,12 +53,6 @@
     dest: "/etc/nginx/sites-available/grafana"
     owner: "root"
     group: "root"
-    mode: 0644
-
-- file:
-    path: /etc/nginx/sites-available/grafana
-    owner: root
-    group: root
     mode: 0644
 
 - file:
